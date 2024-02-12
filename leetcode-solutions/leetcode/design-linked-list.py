@@ -9,7 +9,6 @@ class MyLinkedList:
 
     def get(self, index: int) -> int:
         if self.head is None:
-            print("The linked list is empty")
             return -1
         else:
             n = 0
@@ -20,7 +19,6 @@ class MyLinkedList:
             if node1:
                 return node1.val
             else:
-                print("Index out of bounds")
                 return -1
 
     def addAtHead(self, val: int) -> None:
@@ -51,13 +49,10 @@ class MyLinkedList:
                 new_node = self.Node(val)
                 new_node.next = node1.next
                 node1.next = new_node
-            else:
-                print("Index out of bounds")
 
     def deleteAtIndex(self, index: int) -> None:
-        if self.head is None:
-            print("The linked list is empty")
-        elif index == 0:
+
+        if index == 0:
             self.head = self.head.next
         else:
             n = 0
@@ -67,8 +62,5 @@ class MyLinkedList:
                 node1 = node1.next
             if node1 and node1.next:
                 node1.next = node1.next.next
-            else:
-                print("Index out of bounds")
-
 
 
